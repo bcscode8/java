@@ -1,0 +1,89 @@
+import java.io.*;
+
+class Employee {
+
+int id;
+String ename;
+
+String deptname;
+
+float sal;
+
+static int count=0;
+
+} 
+class empDemo
+
+Employee() id=0;
+
+{
+
+ename="";
+
+deptname="";
+
+sal=0;
+
+count++;//counter
+
+Employee( int id, String ename, String deptname, float sal)
+
+{
+
+this.id=id; this.ename ename;
+
+this.deptname-deptname; this.sal-sal;
+
+count++;
+
+}
+
+void display()
+
+} System.out.println(id+"\t"+ename+"\t"+deptname+"\t"+sal);
+
+{ System.out.println(count+" no. of Objects Created..."); }
+
+static void counter()
+
+{
+
+public static void main(String args[]) throws IOException.
+
+BufferedReader br-new BufferedReader(new InputStreamReader(System.in));
+
+System.out.println("Enter no. of Employee:"); int n-Integer.parseInt(br.readLine());
+
+Employee obj[]=new Employee[n]; //array of object
+
+for(int i=0;i<n;i++)
+
+{
+
+System.out.print("Enter Employee Id:");
+
+int id=Integer.parseInt(br.readLine());
+
+System.out.print("Enter Employee Name:");
+
+String ename-br.readLine();
+
+System.out.print("Enter Employee Department Name:");
+
+String deptname=br.readLine();
+
+System.out.print("Enter Employee Salary:");
+
+float sal-Float.parseFloat(br.readLine());
+
+obj[i]=new Employee (id, ename, deptname, sal);
+
+Employee.counter();
+
+for(int i=0;i<n;i++)
+
+obj[i].display();
+
+}
+
+}

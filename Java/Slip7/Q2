@@ -1,0 +1,33 @@
+package slip7;
+import java.util.*;
+import java.io.*;
+
+public class file {
+
+	public static void main(String[] args) throws IOException,FileNotFoundException {
+	Scanner sc=new Scanner(System.in);
+	System.out.println("Enter the file name");
+	String fname=sc.next();
+       File f=new File(fname);
+       
+        FileInputStream fis=new FileInputStream(fname);
+		BufferedInputStream bis=new BufferedInputStream(fis);
+		int size=bis.available();
+		System.out.println("The reverse order content are");
+		for(int i=size-1;i>=0;i--)
+		{
+			bis.mark(i);
+			bis.skip(i);
+			char ch=((char)bis.read());
+			if(Character.isLowerCase(ch))
+				ch=Character.toUpperCase(ch);
+			else
+				ch=Character.toLowerCase(ch);
+			System.out.println(ch);
+			bis.reset();
+		}
+	
+		
+bis.close();
+}
+}
